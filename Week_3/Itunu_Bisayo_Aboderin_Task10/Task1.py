@@ -21,26 +21,32 @@ if dial == code:
         elif choice == "2":  # Buy Airtime
             password = input("Enter your password: ")
             if password == pass_code:
-                airtime_choice = int(input("How much airtime do you want to purchase?: "))
-                if airtime_choice <= amount:
-                    amount -= airtime_choice
-                    print(f"You have successfully purchased ₦{airtime_choice} airtime.")
-                    print(f"Your new balance is ₦{amount}")
-                else:
-                    print("Insufficient balance.")
+                try:
+                    airtime_choice = int(input("How much airtime do you want to purchase?: "))
+                    if airtime_choice <= amount:
+                        amount -= airtime_choice
+                        print(f"You have successfully purchased ₦{airtime_choice} airtime.")
+                        print(f"Your new balance is ₦{amount}")
+                    else:
+                        print("Insufficient balance.")
+                except ValueError:
+                    print("Invalid input! Please enter a number.")
             else:
                 print("Invalid password! Try again.")
 
         elif choice == "3":  # Buy Data
             password = input("Enter your password: ")
             if password == pass_code:
-                data_choice = int(input("Enter amount to spend on data: "))
-                if data_choice <= amount:
-                    amount -= data_choice
-                    print(f"You have successfully purchased data worth ₦{data_choice}.")
-                    print(f"Your new balance is ₦{amount}")
-                else:
-                    print("Insufficient balance.")
+                try:
+                    data_choice = int(input("Enter amount to spend on data: "))
+                    if data_choice <= amount:
+                        amount -= data_choice
+                        print(f"You have successfully purchased data worth ₦{data_choice}.")
+                        print(f"Your new balance is ₦{amount}")
+                    else:
+                        print("Insufficient balance.")
+                except ValueError:
+                    print("Invalid input! Please enter a number.")
             else:
                 print("Invalid password! Try again.")
 
@@ -53,4 +59,3 @@ if dial == code:
 
 else:
     print("Invalid input. Please enter the correct USSD code.")
-

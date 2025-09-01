@@ -1,4 +1,5 @@
 # 7. Write a program to reverse a string without using slicing ([::-1]).
 
 word = "robot"
-print(word.find(word[-1]) + 1)
+reversed_word = "".join(reversed(word))
+print(reversed_word)
